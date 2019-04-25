@@ -13,6 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var rootViewController: UINavigationController?
+    var webservice = Webservice()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -22,7 +23,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         rootViewController = UINavigationController(rootViewController: viewController)
         window?.rootViewController = rootViewController
         window?.makeKeyAndVisible()
-        
+        webservice.load(PirateData.resource) { result in
+            switch result {
+            case let .success(pirateData):
+                debugPrint(pirateData)
+            case let .failure(error):
+                debugPrint(error)
+            }
+        }
         return true
     }
 

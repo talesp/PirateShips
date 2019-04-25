@@ -24,6 +24,7 @@
 		AA2F011922723095006B9717 /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2F011822723095006B9717 /* URLRequest.swift */; };
 		AA2F011B2272319E006B9717 /* HTTPStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2F011A2272319E006B9717 /* HTTPStatusCode.swift */; };
 		AA2F011D22723309006B9717 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2F011C22723309006B9717 /* Result.swift */; };
+		AA2F011F22723B9D006B9717 /* PirateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2F011E22723B9D006B9717 /* PirateData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		AA2F011822723095006B9717 /* URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequest.swift; sourceTree = "<group>"; };
 		AA2F011A2272319E006B9717 /* HTTPStatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPStatusCode.swift; sourceTree = "<group>"; };
 		AA2F011C22723309006B9717 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		AA2F011E22723B9D006B9717 /* PirateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PirateData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				AA13A4D72272042600A01FA5 /* Assets.xcassets */,
 				AA13A4D92272042600A01FA5 /* LaunchScreen.storyboard */,
 				AA13A4DC2272042600A01FA5 /* Info.plist */,
+				AA2F011E22723B9D006B9717 /* PirateData.swift */,
 			);
 			path = PirateShips;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				AA2F011922723095006B9717 /* URLRequest.swift in Sources */,
 				AA2F011D22723309006B9717 /* Result.swift in Sources */,
 				AA2F01152272303D006B9717 /* Resource.swift in Sources */,
+				AA2F011F22723B9D006B9717 /* PirateData.swift in Sources */,
 				AA2F011722723063006B9717 /* HttpMethod.swift in Sources */,
 				AA2F011B2272319E006B9717 /* HTTPStatusCode.swift in Sources */,
 				AA2F010922722693006B9717 /* Optional.swift in Sources */,

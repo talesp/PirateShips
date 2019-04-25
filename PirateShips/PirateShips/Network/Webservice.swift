@@ -49,6 +49,7 @@ public final class Webservice: NSObject {
     ///   - completion: a `(Result<T, NetworkError>) -> Void` code block, that can be used to treat the response of the
     ///   request
     /// - Returns: an instance of `URLSessionDataTask`, that can be used to cancel the request
+    @discardableResult
     public func load<T>(_ resource: Resource<T>,
                         completion: @escaping (Result<T, NetworkError>) -> Void) -> URLSessionDataTask {
         let request = URLRequest(resource: resource)
