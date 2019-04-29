@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		025C53E42274A6AA00BFD797 /* ShipListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025C53E32274A6AA00BFD797 /* ShipListCell.swift */; };
+		025C53E62274A7CC00BFD797 /* ShipHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025C53E52274A7CC00BFD797 /* ShipHeaderView.swift */; };
 		AA13A4D12272042300A01FA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA13A4D02272042300A01FA5 /* AppDelegate.swift */; };
-		AA13A4D32272042400A01FA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA13A4D22272042400A01FA5 /* ViewController.swift */; };
+		AA13A4D32272042400A01FA5 /* ShipListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA13A4D22272042400A01FA5 /* ShipListViewController.swift */; };
 		AA13A4D82272042600A01FA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA13A4D72272042600A01FA5 /* Assets.xcassets */; };
 		AA13A4DB2272042600A01FA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA13A4D92272042600A01FA5 /* LaunchScreen.storyboard */; };
 		AA13A4E62272042700A01FA5 /* PirateShipsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA13A4E52272042700A01FA5 /* PirateShipsTests.swift */; };
@@ -38,9 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		025C53E32274A6AA00BFD797 /* ShipListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipListCell.swift; sourceTree = "<group>"; };
+		025C53E52274A7CC00BFD797 /* ShipHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipHeaderView.swift; sourceTree = "<group>"; };
 		AA13A4CD2272042300A01FA5 /* PirateShips.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PirateShips.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA13A4D02272042300A01FA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AA13A4D22272042400A01FA5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AA13A4D22272042400A01FA5 /* ShipListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipListViewController.swift; sourceTree = "<group>"; };
 		AA13A4D72272042600A01FA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA13A4DA2272042600A01FA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA13A4DC2272042600A01FA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -106,11 +110,13 @@
 				AA2F010522722663006B9717 /* Extensions */,
 				AA2F010A227226E5006B9717 /* Protocols */,
 				AA13A4D02272042300A01FA5 /* AppDelegate.swift */,
-				AA13A4D22272042400A01FA5 /* ViewController.swift */,
+				AA13A4D22272042400A01FA5 /* ShipListViewController.swift */,
 				AA13A4D72272042600A01FA5 /* Assets.xcassets */,
 				AA13A4D92272042600A01FA5 /* LaunchScreen.storyboard */,
 				AA13A4DC2272042600A01FA5 /* Info.plist */,
 				AA2F011E22723B9D006B9717 /* PirateData.swift */,
+				025C53E32274A6AA00BFD797 /* ShipListCell.swift */,
+				025C53E52274A7CC00BFD797 /* ShipHeaderView.swift */,
 			);
 			path = PirateShips;
 			sourceTree = "<group>";
@@ -265,8 +271,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA2F010C227226F2006B9717 /* Reusable.swift in Sources */,
-				AA13A4D32272042400A01FA5 /* ViewController.swift in Sources */,
+				AA13A4D32272042400A01FA5 /* ShipListViewController.swift in Sources */,
 				AA2F011122722950006B9717 /* APIConfig.swift in Sources */,
+				025C53E62274A7CC00BFD797 /* ShipHeaderView.swift in Sources */,
 				AA2F011922723095006B9717 /* URLRequest.swift in Sources */,
 				AA2F011D22723309006B9717 /* Result.swift in Sources */,
 				AA2F01152272303D006B9717 /* Resource.swift in Sources */,
@@ -276,6 +283,7 @@
 				AA2F010922722693006B9717 /* Optional.swift in Sources */,
 				AA2F010722722671006B9717 /* UICollectionView.swift in Sources */,
 				AA13A4D12272042300A01FA5 /* AppDelegate.swift in Sources */,
+				025C53E42274A6AA00BFD797 /* ShipListCell.swift in Sources */,
 				AA2F010E227227A9006B9717 /* ViewConfiguration.swift in Sources */,
 				AA2F01042272264E006B9717 /* ViewState.swift in Sources */,
 				AA2F011322722B25006B9717 /* Webservice.swift in Sources */,
