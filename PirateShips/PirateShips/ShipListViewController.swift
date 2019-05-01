@@ -57,7 +57,7 @@ class ShipListViewController: UIViewController {
             columns = 3
         }
         let width = (screenWidth - (columns - 1) * space - (layout.sectionInset.left + layout.sectionInset.right)) / columns
-        layout.estimatedItemSize = CGSize(width: width, height: 100)
+        layout.estimatedItemSize = CGSize(width: width, height: 50)
         return layout
     }()
 
@@ -72,7 +72,9 @@ class ShipListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.collectionView.dataSource = datasource
+        view.backgroundColor = .white
+        collectionView.dataSource = datasource
+        collectionView.delegate = self
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -84,6 +86,31 @@ class ShipListViewController: UIViewController {
         layout.estimatedItemSize = CGSize(width: view.bounds.size.width, height: 8)
         layout.invalidateLayout()
         super.viewWillTransition(to: size, with: coordinator)
+    }
+
+}
+
+extension ShipListViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        let space: CGFloat = 8
+
+        let columns: CGFloat
+        if self.traitCollection.horizontalSizeClass == .compact {
+            columns = 2
+        }
+        else {
+            columns = 3
+        }
+
+        let collectionViewWidth = collectionView.safeAreaLayoutGuide.layoutFrame.width
+        let contentInset: CGFloat = collectionView.contentInset.left + collectionView.contentInset.right
+        let sectionInset: CGFloat = layout.sectionInset.left + layout.sectionInset.right
+        let width = (collectionViewWidth - contentInset - sectionInset - (columns - 1) * space) / columns
+        let size: CGSize = CGSize(width: width, height: 50)
+        let cell: ShipListCell = collectionView.dequeueReusableCell(for: indexPath)
+        let adjustedSize: CGSize = cell.contentView.systemLayoutSizeFitting(size, withHorizontalFittingPriority: .required, verticalFittingPriority: UILayoutPriority(rawValue: 500))
+        return adjustedSize
     }
 
 }

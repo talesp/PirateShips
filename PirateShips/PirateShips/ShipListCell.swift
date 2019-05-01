@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ShipListCell: UICollectionViewCell, Reusable, ViewConfiguration {
 
@@ -19,6 +20,7 @@ class ShipListCell: UICollectionViewCell, Reusable, ViewConfiguration {
     override init(frame: CGRect) {
         super.init(frame: .zero)
         setupViewConfiguration()
+        self.contentView.translatesAutoresizingMaskIntoConstraints = false
     }
 
     @available(*, unavailable)
@@ -30,25 +32,14 @@ class ShipListCell: UICollectionViewCell, Reusable, ViewConfiguration {
         shipHeaderView.priceLabel.text = "$ \(ship.price)"
         shipHeaderView.titleLabel.text = ship.title
         guard let url = URL(string: ship.image) else { return }
-        guard self.shipHeaderView.imageView.image == nil else { return }
-        URLSession.shared.dataTask(with: url) { [unowned self] data, response, error in
-            guard let data = data else { return }
-
-            let image = UIImage(data: data)
-            DispatchQueue.main.async {
-                self.shipHeaderView.imageView.image = image
-                guard let collectionView = self.superview as? UICollectionView else { return }
-                collectionView.collectionViewLayout.invalidateLayout()
-            }
-        }.resume()
+        self.shipHeaderView.imageView.kf.setImage(with: url)
     }
 
     override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes)
         -> UICollectionViewLayoutAttributes {
-
+            let layoutAttributes = super.preferredLayoutAttributesFitting(layoutAttributes)
             guard let collectionView = self.superview as? UICollectionView,
                 let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else { return layoutAttributes }
-            let sectionInset = layout.sectionInset
             let columns: CGFloat
             if self.traitCollection.horizontalSizeClass == .compact {
                 columns = 2
@@ -57,15 +48,12 @@ class ShipListCell: UICollectionViewCell, Reusable, ViewConfiguration {
                 columns = 3
             }
             let space: CGFloat = 8.0
-            let referenceWidth = collectionView.safeAreaLayoutGuide.layoutFrame.width
-                - sectionInset.left
-                - sectionInset.right
-                - collectionView.contentInset.left
-                - collectionView.contentInset.right
-                - (columns - 1) * space
-
-            let referenceSize = CGSize(width: referenceWidth/columns, height: collectionView.bounds.size.height)
-            let size = contentView.systemLayoutSizeFitting(referenceSize, withHorizontalFittingPriority: UILayoutPriority.defaultHigh, verticalFittingPriority: UILayoutPriority.fittingSizeLevel)
+            let collectionViewWidth = collectionView.safeAreaLayoutGuide.layoutFrame.width
+            let contentInset: CGFloat = collectionView.contentInset.left + collectionView.contentInset.right
+            let sectionInset: CGFloat = layout.sectionInset.left + layout.sectionInset.right
+            let width = (collectionViewWidth - contentInset - sectionInset - (columns - 1) * space) / columns
+            let referenceSize = CGSize(width: width, height: 50)
+            let size = contentView.systemLayoutSizeFitting(referenceSize, withHorizontalFittingPriority: .required, verticalFittingPriority: UILayoutPriority(rawValue: 500))
 
             layoutAttributes.size = size
 
@@ -75,16 +63,27 @@ class ShipListCell: UICollectionViewCell, Reusable, ViewConfiguration {
 
 extension ShipListCell {
     func buildViewHierarchy() {
-        self.contentView.addSubview(shipHeaderView)
+        contentView.addSubview(shipHeaderView)
     }
 
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            shipHeaderView.topAnchor.constraint(equalTo: self.contentView.topAnchor),
-            shipHeaderView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
-            shipHeaderView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
-            shipHeaderView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor)
+            shipHeaderView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            shipHeaderView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            shipHeaderView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            shipHeaderView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
+            ])
+
+        NSLayoutConstraint.activate([
+            contentView.topAnchor.constraint(equalTo: self.topAnchor),
+            contentView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor)
             ])
     }
 
+    func configureViews() {
+        contentView.layer.cornerRadius = 4.0
+        contentView.layer.masksToBounds = true
+    }
 }

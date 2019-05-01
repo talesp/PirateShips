@@ -13,7 +13,8 @@ class ShipHeaderView: UIView {
     private var titleContainer: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.white.withAlphaComponent(0.18)
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.18)
+        view.layer.cornerRadius = 4.0
         return view
     }()
 
@@ -21,13 +22,17 @@ class ShipHeaderView: UIView {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.font = UIFont.preferredFont(forTextStyle: .headline)
+        view.textColor = .white
         view.numberOfLines = 0
+        view.setContentHuggingPriority(.defaultHigh, for: .vertical)
         return view
     }()
 
     private var priceContainer: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.18)
+        view.layer.cornerRadius = 4.0
         return view
     }()
 
@@ -35,17 +40,25 @@ class ShipHeaderView: UIView {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.font = UIFont.preferredFont(forTextStyle: .title2)
+        view.textColor = .white
+        view.setContentHuggingPriority(.defaultHigh, for: .vertical)
         return view
     }()
 
     private(set) var imageView: UIImageView = {
         let view = UIImageView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.contentMode = UIView.ContentMode.scaleAspectFit
+        view.contentMode = UIView.ContentMode.scaleAspectFill
+        view.setContentHuggingPriority(.defaultHigh, for: .vertical)
+        view.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
+        view.clipsToBounds = true
         return view
     }()
 
+    private var imageProportionConstraint: NSLayoutConstraint
+
     override init(frame: CGRect) {
+        imageProportionConstraint = self.imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor)
         super.init(frame: .zero)
         setupViewConfiguration()
     }
@@ -85,7 +98,6 @@ extension ShipHeaderView: ViewConfiguration {
         NSLayoutConstraint.activate([
             priceContainer.topAnchor.constraint(equalTo: self.topAnchor, constant: self.directionalLayoutMargins.top),
             priceContainer.leadingAnchor.constraint(greaterThanOrEqualTo: self.leadingAnchor, constant: self.directionalLayoutMargins.leading),
-        	priceContainer.bottomAnchor.constraint(greaterThanOrEqualTo: titleContainer.topAnchor, constant: self.directionalLayoutMargins.top),
         	priceContainer.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -self.directionalLayoutMargins.trailing)
          ])
 
@@ -99,12 +111,14 @@ extension ShipHeaderView: ViewConfiguration {
          NSLayoutConstraint.activate([
          	titleContainer.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: self.directionalLayoutMargins.leading),
          	titleContainer.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -self.directionalLayoutMargins.bottom),
-            titleContainer.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -self.directionalLayoutMargins.trailing)
+            titleContainer.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -self.directionalLayoutMargins.trailing),
+            titleContainer.topAnchor.constraint(greaterThanOrEqualTo: priceContainer.bottomAnchor, constant: self.directionalLayoutMargins.top),
+
          ])
     }
 
     func configureViews() {
-        backgroundColor = .white
+        backgroundColor = .lightGray
     }
 
 }

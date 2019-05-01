@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		025C53E42274A6AA00BFD797 /* ShipListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025C53E32274A6AA00BFD797 /* ShipListCell.swift */; };
 		025C53E62274A7CC00BFD797 /* ShipHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025C53E52274A7CC00BFD797 /* ShipHeaderView.swift */; };
+		025C53E92279DFCA00BFD797 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 025C53E82279DFCA00BFD797 /* Kingfisher.framework */; };
 		AA13A4D12272042300A01FA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA13A4D02272042300A01FA5 /* AppDelegate.swift */; };
 		AA13A4D32272042400A01FA5 /* ShipListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA13A4D22272042400A01FA5 /* ShipListViewController.swift */; };
 		AA13A4D82272042600A01FA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA13A4D72272042600A01FA5 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		025C53E32274A6AA00BFD797 /* ShipListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipListCell.swift; sourceTree = "<group>"; };
 		025C53E52274A7CC00BFD797 /* ShipHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipHeaderView.swift; sourceTree = "<group>"; };
+		025C53E82279DFCA00BFD797 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		AA13A4CD2272042300A01FA5 /* PirateShips.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PirateShips.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA13A4D02272042300A01FA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA13A4D22272042400A01FA5 /* ShipListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipListViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				025C53E92279DFCA00BFD797 /* Kingfisher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,12 +87,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		025C53E72279DFCA00BFD797 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				025C53E82279DFCA00BFD797 /* Kingfisher.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AA13A4C42272042300A01FA5 = {
 			isa = PBXGroup;
 			children = (
 				AA13A4CF2272042300A01FA5 /* PirateShips */,
 				AA13A4E42272042700A01FA5 /* PirateShipsTests */,
 				AA13A4CE2272042300A01FA5 /* Products */,
+				025C53E72279DFCA00BFD797 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -180,6 +192,7 @@
 				AA13A4C92272042300A01FA5 /* Sources */,
 				AA13A4CA2272042300A01FA5 /* Frameworks */,
 				AA13A4CB2272042300A01FA5 /* Resources */,
+				025C53EA2279DFE400BFD797 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -264,6 +277,29 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		025C53EA2279DFE400BFD797 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Kingfisher.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AA13A4C92272042300A01FA5 /* Sources */ = {
@@ -441,6 +477,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = PirateShips/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -458,6 +498,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = PirateShips/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
