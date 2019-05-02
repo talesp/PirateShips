@@ -75,6 +75,7 @@ class ShipListViewController: UIViewController {
         view.backgroundColor = .white
         collectionView.dataSource = datasource
         collectionView.delegate = self
+        self.title = "Pirate Ships"
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -91,6 +92,7 @@ class ShipListViewController: UIViewController {
 }
 
 extension ShipListViewController: UICollectionViewDelegateFlowLayout {
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
         let space: CGFloat = 8
@@ -113,4 +115,15 @@ extension ShipListViewController: UICollectionViewDelegateFlowLayout {
         return adjustedSize
     }
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let datasource = collectionView.dataSource as? ShipListViewDataSource else { return }
+        let ship = datasource.shipList[indexPath.item]
+        let detailViewController = ShipDetailViewController()
+        detailViewController.setup(title: ship.title ?? "",
+                                   price: ship.price,
+                                   description: ship.description,
+                                   image: ship.image,
+                                   greeting: ship.greeting)
+        self.show(detailViewController, sender: self)
+    }
 }

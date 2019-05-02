@@ -23,7 +23,7 @@ class ShipHeaderView: UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.font = UIFont.preferredFont(forTextStyle: .headline)
         view.textColor = .white
-        view.numberOfLines = 0
+        view.numberOfLines = 2
         view.setContentHuggingPriority(.defaultHigh, for: .vertical)
         return view
     }()
@@ -55,10 +55,7 @@ class ShipHeaderView: UIView {
         return view
     }()
 
-    private var imageProportionConstraint: NSLayoutConstraint
-
     override init(frame: CGRect) {
-        imageProportionConstraint = self.imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor)
         super.init(frame: .zero)
         setupViewConfiguration()
     }
@@ -66,6 +63,13 @@ class ShipHeaderView: UIView {
     @available(*, unavailable)
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    func setup(title: String, price: Int, imageURL: String) {
+        titleLabel.text = title
+        priceLabel.text = "$ \(price)"
+        guard let url = URL(string: imageURL) else { return }
+        imageView.kf.setImage(with: url)
     }
 }
 

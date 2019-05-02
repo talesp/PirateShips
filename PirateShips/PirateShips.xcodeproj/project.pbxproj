@@ -10,6 +10,7 @@
 		025C53E42274A6AA00BFD797 /* ShipListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025C53E32274A6AA00BFD797 /* ShipListCell.swift */; };
 		025C53E62274A7CC00BFD797 /* ShipHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025C53E52274A7CC00BFD797 /* ShipHeaderView.swift */; };
 		025C53E92279DFCA00BFD797 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 025C53E82279DFCA00BFD797 /* Kingfisher.framework */; };
+		025C53EE227A81F000BFD797 /* ShipDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025C53ED227A81F000BFD797 /* ShipDetailViewController.swift */; };
 		AA13A4D12272042300A01FA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA13A4D02272042300A01FA5 /* AppDelegate.swift */; };
 		AA13A4D32272042400A01FA5 /* ShipListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA13A4D22272042400A01FA5 /* ShipListViewController.swift */; };
 		AA13A4D82272042600A01FA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA13A4D72272042600A01FA5 /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 		025C53E32274A6AA00BFD797 /* ShipListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipListCell.swift; sourceTree = "<group>"; };
 		025C53E52274A7CC00BFD797 /* ShipHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipHeaderView.swift; sourceTree = "<group>"; };
 		025C53E82279DFCA00BFD797 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		025C53ED227A81F000BFD797 /* ShipDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipDetailViewController.swift; sourceTree = "<group>"; };
 		AA13A4CD2272042300A01FA5 /* PirateShips.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PirateShips.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA13A4D02272042300A01FA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA13A4D22272042400A01FA5 /* ShipListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipListViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +97,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		025C53EB227A817E00BFD797 /* ShipList */ = {
+			isa = PBXGroup;
+			children = (
+				AA13A4D22272042400A01FA5 /* ShipListViewController.swift */,
+				025C53E32274A6AA00BFD797 /* ShipListCell.swift */,
+			);
+			path = ShipList;
+			sourceTree = "<group>";
+		};
+		025C53EC227A81A400BFD797 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AA2F011E22723B9D006B9717 /* PirateData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		AA13A4C42272042300A01FA5 = {
 			isa = PBXGroup;
 			children = (
@@ -117,18 +136,18 @@
 		AA13A4CF2272042300A01FA5 /* PirateShips */ = {
 			isa = PBXGroup;
 			children = (
-				AA2F010F2272293E006B9717 /* Network */,
 				AA13A4F022721D7B00A01FA5 /* CommonTypes */,
 				AA2F010522722663006B9717 /* Extensions */,
+				025C53EC227A81A400BFD797 /* Model */,
+				AA2F010F2272293E006B9717 /* Network */,
 				AA2F010A227226E5006B9717 /* Protocols */,
+				025C53EB227A817E00BFD797 /* ShipList */,
 				AA13A4D02272042300A01FA5 /* AppDelegate.swift */,
-				AA13A4D22272042400A01FA5 /* ShipListViewController.swift */,
+				025C53E52274A7CC00BFD797 /* ShipHeaderView.swift */,
 				AA13A4D72272042600A01FA5 /* Assets.xcassets */,
 				AA13A4D92272042600A01FA5 /* LaunchScreen.storyboard */,
 				AA13A4DC2272042600A01FA5 /* Info.plist */,
-				AA2F011E22723B9D006B9717 /* PirateData.swift */,
-				025C53E32274A6AA00BFD797 /* ShipListCell.swift */,
-				025C53E52274A7CC00BFD797 /* ShipHeaderView.swift */,
+				025C53ED227A81F000BFD797 /* ShipDetailViewController.swift */,
 			);
 			path = PirateShips;
 			sourceTree = "<group>";
@@ -316,6 +335,7 @@
 				AA2F011F22723B9D006B9717 /* PirateData.swift in Sources */,
 				AA2F011722723063006B9717 /* HttpMethod.swift in Sources */,
 				AA2F011B2272319E006B9717 /* HTTPStatusCode.swift in Sources */,
+				025C53EE227A81F000BFD797 /* ShipDetailViewController.swift in Sources */,
 				AA2F010922722693006B9717 /* Optional.swift in Sources */,
 				AA2F010722722671006B9717 /* UICollectionView.swift in Sources */,
 				AA13A4D12272042300A01FA5 /* AppDelegate.swift in Sources */,

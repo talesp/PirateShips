@@ -85,5 +85,6 @@ extension ShipListCell {
     func configureViews() {
         contentView.layer.cornerRadius = 4.0
         contentView.layer.masksToBounds = true
+        
     }
 }
