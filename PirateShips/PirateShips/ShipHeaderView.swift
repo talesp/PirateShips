@@ -6,11 +6,10 @@
 //  Copyright © 2019 tales.andrade. All rights reserved.
 //
 
-import UIKit
 import Kingfisher
+import UIKit
 
 class ShipHeaderView: UIView {
-
     private var titleContainer: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -61,7 +60,7 @@ class ShipHeaderView: UIView {
         super.init(frame: .zero)
         setupViewConfiguration()
     }
-    
+
     override init(frame: CGRect) {
         super.init(frame: .zero)
         setupViewConfiguration()
@@ -97,39 +96,38 @@ extension ShipHeaderView: ViewConfiguration {
             imageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             imageView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             imageView.trailingAnchor.constraint(equalTo: self.trailingAnchor)
-            ])
+        ])
 
         NSLayoutConstraint.activate([
-        	priceLabel.topAnchor.constraint(equalTo: priceContainer.topAnchor, constant: priceContainer.directionalLayoutMargins.top),
-        	priceLabel.leadingAnchor.constraint(equalTo: priceContainer.leadingAnchor, constant: priceContainer.directionalLayoutMargins.leading),
-        	priceLabel.bottomAnchor.constraint(equalTo: priceContainer.bottomAnchor, constant: -priceContainer.directionalLayoutMargins.bottom),
-        	priceLabel.trailingAnchor.constraint(equalTo: priceContainer.trailingAnchor, constant: -priceContainer.directionalLayoutMargins.trailing)
+            priceLabel.topAnchor.constraint(equalTo: priceContainer.topAnchor, constant: priceContainer.directionalLayoutMargins.top),
+            priceLabel.leadingAnchor.constraint(equalTo: priceContainer.leadingAnchor, constant: priceContainer.directionalLayoutMargins.leading),
+            priceLabel.bottomAnchor.constraint(equalTo: priceContainer.bottomAnchor, constant: -priceContainer.directionalLayoutMargins.bottom),
+            priceLabel.trailingAnchor.constraint(equalTo: priceContainer.trailingAnchor, constant: -priceContainer.directionalLayoutMargins.trailing)
         ])
-        
+
         NSLayoutConstraint.activate([
             priceContainer.topAnchor.constraint(equalTo: self.topAnchor, constant: self.directionalLayoutMargins.top),
             priceContainer.leadingAnchor.constraint(greaterThanOrEqualTo: self.leadingAnchor, constant: self.directionalLayoutMargins.leading),
-        	priceContainer.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -self.directionalLayoutMargins.trailing)
-         ])
+            priceContainer.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -self.directionalLayoutMargins.trailing)
+        ])
 
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: titleContainer.topAnchor, constant: titleContainer.directionalLayoutMargins.top),
             titleLabel.leadingAnchor.constraint(equalTo: titleContainer.leadingAnchor, constant: titleContainer.directionalLayoutMargins.leading),
             titleLabel.bottomAnchor.constraint(equalTo: titleContainer.bottomAnchor, constant: -titleContainer.directionalLayoutMargins.bottom),
             titleLabel.trailingAnchor.constraint(equalTo: titleContainer.trailingAnchor, constant: -titleContainer.directionalLayoutMargins.trailing)
-            ])
+        ])
 
-         NSLayoutConstraint.activate([
-         	titleContainer.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: self.directionalLayoutMargins.leading),
-         	titleContainer.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -self.directionalLayoutMargins.bottom),
+        NSLayoutConstraint.activate([
+            titleContainer.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: self.directionalLayoutMargins.leading),
+            titleContainer.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -self.directionalLayoutMargins.bottom),
             titleContainer.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -self.directionalLayoutMargins.trailing),
-            titleContainer.topAnchor.constraint(greaterThanOrEqualTo: priceContainer.bottomAnchor, constant: self.directionalLayoutMargins.top),
+            titleContainer.topAnchor.constraint(greaterThanOrEqualTo: priceContainer.bottomAnchor, constant: self.directionalLayoutMargins.top)
 
-         ])
+        ])
     }
 
     func configureViews() {
         backgroundColor = .lightGray
     }
-
 }

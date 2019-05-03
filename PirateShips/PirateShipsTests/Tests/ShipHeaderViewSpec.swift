@@ -7,9 +7,9 @@
 //
 
 import Foundation
-import Quick
 import Nimble
 import Nimble_Snapshots
+import Quick
 
 @testable import PirateShips
 
@@ -23,7 +23,7 @@ class ShipHeaderViewSpec: QuickSpec {
                 sut.setup(title: "Title", price: 42, imageURL: "")
                 sut.setNeedsLayout()
                 sut.layoutIfNeeded()
-                
+
                 expect(sut) == snapshot()
             }
         }

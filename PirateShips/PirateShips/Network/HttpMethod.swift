@@ -22,7 +22,7 @@ extension HttpMethod {
             return "POST"
         }
     }
-    
+
     func map<B>(function: (Body) -> B) -> HttpMethod<B> {
         switch self {
         case .get:

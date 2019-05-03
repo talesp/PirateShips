@@ -10,13 +10,11 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
     var rootViewController: UINavigationController?
     var webservice = Webservice()
-    
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
         window = UIWindow()
         let viewController = ShipListViewController()
         rootViewController = UINavigationController(rootViewController: viewController)
@@ -25,13 +23,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         webservice.load(PirateData.resource) { result in
             switch result {
             case let .success(pirateData):
-                viewController.datasource.shipList = pirateData.ships.compactMap({ $0 })
+                viewController.datasource.shipList = pirateData.ships.compactMap { $0 }
             case let .failure(error):
                 debugPrint(error)
             }
         }
         return true
     }
-
 }
-

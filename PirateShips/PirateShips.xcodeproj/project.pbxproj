@@ -308,10 +308,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA13A4EA2272042700A01FA5 /* Build configuration list for PBXNativeTarget "PirateShips" */;
 			buildPhases = (
+				AAE9B288227CF5740042E523 /* Swiftlint */,
 				AA13A4C92272042300A01FA5 /* Sources */,
 				AA13A4CA2272042300A01FA5 /* Frameworks */,
 				AA13A4CB2272042300A01FA5 /* Resources */,
 				025C53EA2279DFE400BFD797 /* Carthage */,
+				AAE9B28A227CFB140042E523 /* swiftformat */,
 			);
 			buildRules = (
 			);
@@ -420,6 +422,42 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+		};
+		AAE9B288227CF5740042E523 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [ -x \"$(command -v swiftlint)\" ]; then\n    swiftlint autocorrect\nfi\n";
+		};
+		AAE9B28A227CFB140042E523 /* swiftformat */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = swiftformat;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [ -x \"$(command -v swiftformat)\" ]; then\n    swiftformat .\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

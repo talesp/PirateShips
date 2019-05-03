@@ -9,17 +9,16 @@
 import UIKit
 
 class ShipDetailViewController: UIViewController {
-
     private(set) lazy var shipDetailView: ShipDetailView = ShipDetailView()
     private var greeting: Greeting?
 
     override func loadView() {
-        self.view = shipDetailView
+        view = shipDetailView
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Greetings", style: .plain, target: self, action: #selector(greetings(sender:)))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Greetings", style: .plain, target: self, action: #selector(greetings(sender:)))
     }
 
     @objc
@@ -38,7 +37,6 @@ class ShipDetailViewController: UIViewController {
 }
 
 class ShipDetailView: UIView {
-
     private var shipHeaderView: ShipHeaderView = {
         let view = ShipHeaderView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -71,7 +69,6 @@ class ShipDetailView: UIView {
 }
 
 extension ShipDetailView: ViewConfiguration {
-
     func buildViewHierarchy() {
         addSubview(shipHeaderView)
         addSubview(descriptionTextView)
@@ -83,18 +80,17 @@ extension ShipDetailView: ViewConfiguration {
             shipHeaderView.heightAnchor.constraint(equalToConstant: 300),
             shipHeaderView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
             shipHeaderView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor)
-            ])
+        ])
 
         NSLayoutConstraint.activate([
             descriptionTextView.topAnchor.constraint(equalTo: shipHeaderView.bottomAnchor, constant: self.layoutMargins.bottom),
             descriptionTextView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
             descriptionTextView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor),
             descriptionTextView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor)
-            ])
+        ])
     }
 
     func configureViews() {
         backgroundColor = .white
     }
-
 }

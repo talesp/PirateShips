@@ -9,7 +9,6 @@
 import UIKit
 
 class ShipListViewDataSource: NSObject, UICollectionViewDataSource {
-
     var shipList: [Ship] = [] {
         didSet {
             DispatchQueue.main.async { [weak self] in
@@ -18,6 +17,7 @@ class ShipListViewDataSource: NSObject, UICollectionViewDataSource {
             }
         }
     }
+
     private weak var collectionView: UICollectionView?
 
     init(collectionView: UICollectionView) {
@@ -32,15 +32,13 @@ class ShipListViewDataSource: NSObject, UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let ship = shipList[indexPath.item]
-        let cell: ShipListCell =  collectionView.dequeueReusableCell(for: indexPath)
+        let cell: ShipListCell = collectionView.dequeueReusableCell(for: indexPath)
         cell.setup(ship: ship)
         return cell
     }
-
 }
 
 class ShipListViewController: UIViewController {
-
     private lazy var layout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
 
@@ -68,7 +66,7 @@ class ShipListViewController: UIViewController {
     private(set) lazy var datasource: ShipListViewDataSource = ShipListViewDataSource(collectionView: collectionView)
 
     override func loadView() {
-        self.view = collectionView
+        view = collectionView
     }
 
     override func viewDidLoad() {
@@ -76,7 +74,7 @@ class ShipListViewController: UIViewController {
         view.backgroundColor = .white
         collectionView.dataSource = datasource
         collectionView.delegate = self
-        self.title = "Pirate Ships"
+        title = "Pirate Ships"
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -89,17 +87,14 @@ class ShipListViewController: UIViewController {
         layout.invalidateLayout()
         super.viewWillTransition(to: size, with: coordinator)
     }
-
 }
 
 extension ShipListViewController: UICollectionViewDelegateFlowLayout {
-
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
         let space: CGFloat = 8
 
         let columns: CGFloat
-        if self.traitCollection.horizontalSizeClass == .compact {
+        if traitCollection.horizontalSizeClass == .compact {
             columns = 2
         }
         else {
@@ -125,6 +120,6 @@ extension ShipListViewController: UICollectionViewDelegateFlowLayout {
                                    description: ship.description,
                                    image: ship.image,
                                    greeting: ship.greeting)
-        self.show(detailViewController, sender: self)
+        show(detailViewController, sender: self)
     }
 }

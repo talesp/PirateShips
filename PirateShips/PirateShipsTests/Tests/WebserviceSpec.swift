@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import Quick
 import Nimble
+import Quick
 
 @testable import PirateShips
 
@@ -17,13 +17,13 @@ class WebserviceSpec: QuickSpec {
         describe("Webservice") {
             let session = FakeURLSession()
             let sut = Webservice(urlSession: session)
-            
+
             it("should return a list of pirate ships") {
                 let resource = PirateData.resource
                 guard let data = JSONHelper.loadJSON(filename: "PirateShips") else { fail(); return }
                 session.data = data
                 session.response = HTTPURLResponse(resource: resource)
-                
+
                 guard let pirateData = try? JSONDecoder().decode(PirateData.self, from: data) else { fail(); return }
                 _ = sut.load(resource) { result in
                     switch result {
@@ -34,7 +34,6 @@ class WebserviceSpec: QuickSpec {
                     }
                 }
             }
-
         }
     }
 }

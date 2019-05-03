@@ -1,0 +1,89 @@
+opt_in_rules:
+  - anyobject_protocol
+  - array_init
+  - attributes
+  - closure_body_length
+  - closure_end_indentation
+  - closure_spacing
+  - convenience_type
+  - discouraged_object_literal
+  - discouraged_optional_boolean  
+  - empty_count
+  - empty_string    
+  - explicit_init
+  - fatal_error_message
+  - file_length
+  - first_where
+  - force_cast
+  - force_try
+  - force_unwrapping
+  - implicitly_unwrapped_optional
+  - joined_default_parameter
+  - last_where
+  - legacy_hashing
+  - legacy_random
+  - modifier_order
+  - multiline_parameters
+  - operator_usage_whitespace
+  - overridden_super_call
+  - prefixed_toplevel_constant
+  - private_action
+  - private_outlet
+  - prohibited_super_call
+  - redundant_nil_coalescing
+  - sorted_first_last  
+  - switch_case_on_newline
+  - toggle_bool
+  - trailing_closure
+  - unavailable_function
+  - unneeded_parentheses_in_closure_argument
+  - unused_capture_list
+  - unowned_variable_capture
+  - vertical_parameter_alignment_on_call
+  - yoda_condition
+
+force_cast:
+  severity: warning 
+
+force_try:
+  severity: error
+
+force_unwrapping:
+  severity: error  
+
+# rules that have both warning and error levels, can set just the warning level
+# implicitly
+function_body_length:
+  warning: 80
+  error: 90 
+
+nesting:
+  type_level: 2
+
+line_length: 180
+
+statement_position:
+  statement_mode: uncuddled_else
+
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - Carthage
+
+custom_rules:
+  quickspec_class_name:
+    name: "Invalid Test Class Name"
+    regex: "class\\s+(.*)[^Spec]:\\s+QuickSpec"
+    message: "A test class name must end with 'Tests'"
+    severity: error
+
+  disable_print:
+    name: "print usage"
+    regex: "((\\bprint)|(Swift\\.print))\\s*\\("
+    included: ".*\\.swift"
+    message: "Prefer debugPrint over print"
+    severity: error
+
+identifier_name:
+  error: 3
+  excluded:
+    - id
+reporter: "xcode"      

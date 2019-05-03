@@ -7,9 +7,9 @@
 //
 
 import Foundation
-import Quick
 import Nimble
 import Nimble_Snapshots
+import Quick
 
 @testable import PirateShips
 
@@ -20,17 +20,17 @@ class ShipDetailViewControllerSpec: QuickSpec {
                 let sut = ShipDetailViewController(nibName: nil, bundle: nil)
                 sut.setup(title: "Title", price: 42, description: "Ship description", image: "", greeting: .yoho)
                 _ = sut.view
-                let window = UIWindow.init(frame: UIScreen.main.bounds)
+                let window = UIWindow(frame: UIScreen.main.bounds)
                 window.rootViewController = UINavigationController(rootViewController: sut)
                 window.makeKeyAndVisible()
                 expect(window) == snapshot()
             }
-            
+
             it("should present correct greeting message") {
                 let sut = ShipDetailViewController(nibName: nil, bundle: nil)
                 sut.setup(title: "Title", price: 42, description: "Ship description", image: "", greeting: .yoho)
                 _ = sut.view
-                let window = UIWindow.init(frame: UIScreen.main.bounds)
+                let window = UIWindow(frame: UIScreen.main.bounds)
                 window.rootViewController = UINavigationController(rootViewController: sut)
                 window.makeKeyAndVisible()
                 sut.greetings(sender: UIBarButtonItem())

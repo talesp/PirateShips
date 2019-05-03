@@ -17,7 +17,7 @@ extension Result {
     init(_ value: Success) {
         self = Result.success(value)
     }
-    
+
     /// Convenience initializer
     ///
     /// - Parameter value: an instance of any type conforming to `Error` protocol

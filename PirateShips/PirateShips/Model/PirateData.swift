@@ -22,7 +22,7 @@ struct Ship: Decodable, Equatable {
     let price: Int
     let image: String
     let greeting: Greeting
-    
+
     init(id: Int = 0, title: String, description: String, price: Int, image: String, greeting: Greeting) {
         self.id = id
         self.title = title
@@ -31,16 +31,16 @@ struct Ship: Decodable, Equatable {
         self.image = image
         self.greeting = greeting
     }
-    
+
     enum CodingKeys: String, CodingKey {
-        case id = "id"
-        case title = "title"
-        case description = "description"
-        case price = "price"
-        case image = "image"
+        case id
+        case title
+        case description
+        case price
+        case image
         case greeting = "greeting_type"
     }
-    
+
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(Int.self, forKey: .id)
@@ -53,12 +53,11 @@ struct Ship: Decodable, Equatable {
 }
 
 enum Greeting: String, Decodable, Equatable {
-
     case ahoy = "ah"
     case aye = "ay"
     case arr = "ar"
     case yoho = "yo"
-    
+
     init?(rawValue: String) {
         switch rawValue.lowercased() {
         case "ah": self = .ahoy
@@ -83,14 +82,13 @@ enum Greeting: String, Decodable, Equatable {
 }
 
 extension PirateData {
-    
     private static let pathURLString = "pirateships"
-    
+
     static var resource: Resource<PirateData> {
         let components = URLComponents(url: APIConfig.baseURL, resolvingAgainstBaseURL: true)
-        
+
         let url = components?.url?.appendingPathComponent(PirateData.pathURLString) !! "Error appending path"
-        
+
         return Resource(url: url)
     }
 }

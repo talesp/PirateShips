@@ -30,7 +30,7 @@ public enum NetworkError: Error, Equatable {
 /// Class used to send network requests
 public final class Webservice: NSObject {
     let urlSession: URLSession
-    
+
     /// Initialization method
     ///
     /// If a instance of `URLSession` is not passed, it uses a default `URLSession` initialized with a
@@ -41,7 +41,7 @@ public final class Webservice: NSObject {
                                                     delegateQueue: nil)) {
         self.urlSession = urlSession
     }
-    
+
     /// Method to send natwork requests in the form of a `Resource`
     ///
     /// - Parameters:
@@ -53,7 +53,7 @@ public final class Webservice: NSObject {
     public func load<T>(_ resource: Resource<T>,
                         completion: @escaping (Result<T, NetworkError>) -> Void) -> URLSessionDataTask {
         let request = URLRequest(resource: resource)
-        
+
         let task = urlSession.dataTask(with: request) { [weak self] data, urlResponse, error in
             guard let self = self else { return }
             let result: Result<T, NetworkError>
@@ -71,9 +71,11 @@ public final class Webservice: NSObject {
                 default:
                     result = Result(.unknowm)
                 }
-            } else if let error = error {
+            }
+            else if let error = error {
                 result = Result(.networkError(error.localizedDescription))
-            } else {
+            }
+            else {
                 result = Result(.unknowm)
             }
             completion(result)
@@ -81,7 +83,7 @@ public final class Webservice: NSObject {
         task.resume()
         return task
     }
-    
+
     private func parse<T>(_ data: Data?,
                           for resource: Resource<T>,
                           error: Error?) -> Result<T, NetworkError> where T: Decodable {
@@ -89,12 +91,15 @@ public final class Webservice: NSObject {
         if let data = data {
             do {
                 result = try Result(resource.parse(data))
-            } catch {
+            }
+            catch {
                 result = Result(NetworkError.invalidData(error.localizedDescription))
             }
-        } else if let error = error {
+        }
+        else if let error = error {
             fatalError("FIXME: [\(error)]")
-        } else {
+        }
+        else {
             result = Result(NetworkError.emptyData)
         }
         return result

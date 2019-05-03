@@ -7,9 +7,9 @@
 //
 
 import Foundation
-import Quick
 import Nimble
 import Nimble_Snapshots
+import Quick
 
 @testable import PirateShips
 
@@ -23,7 +23,7 @@ class ShipListViewControllerSpec: QuickSpec {
                     Ship(title: "Title 2", description: "Description 2", price: 42, image: "", greeting: .arr),
                     Ship(title: "Title 3", description: "Description 3", price: 42, image: "", greeting: .aye)
                 ]
-                
+
                 let window = UIWindow(frame: UIScreen.main.bounds)
                 window.rootViewController = UINavigationController(rootViewController: sut)
                 window.becomeKey()

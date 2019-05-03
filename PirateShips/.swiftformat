@@ -1,0 +1,4 @@
+--swiftversion 5.0
+--disable elseOnSameLine,unusedArguments,trailingCommas
+--enable isEmpty,andOperator,anyObjectProtocol,blankLinesAtStartOfScope,blankLinesAtEndOfScope,duplicateImports,yodaConditions,semicolons
+--exclude Carthage

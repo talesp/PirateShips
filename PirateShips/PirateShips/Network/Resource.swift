@@ -24,11 +24,12 @@ extension Resource {
         self.method = method.map { json in
             do {
                 return try JSONSerialization.data(withJSONObject: json, options: [])
-            } catch {
+            }
+            catch {
                 fatalError(error.localizedDescription)
             }
         }
-        self.parse = { data in
+        parse = { data in
             try decoder.decode(T.self, from: data)
         }
     }
