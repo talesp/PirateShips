@@ -10,18 +10,27 @@ import Foundation
 
 import Foundation
 
-struct PirateData: Decodable {
+struct PirateData: Decodable, Equatable {
     let success: Bool
     let ships: [Ship?]
 }
 
-struct Ship: Decodable {
+struct Ship: Decodable, Equatable {
     let id: Int
     let title: String?
     let description: String
     let price: Int
     let image: String
     let greeting: Greeting
+    
+    init(id: Int = 0, title: String, description: String, price: Int, image: String, greeting: Greeting) {
+        self.id = id
+        self.title = title
+        self.description = description
+        self.price = price
+        self.image = image
+        self.greeting = greeting
+    }
     
     enum CodingKeys: String, CodingKey {
         case id = "id"
@@ -43,7 +52,7 @@ struct Ship: Decodable {
     }
 }
 
-enum Greeting: String, Decodable {
+enum Greeting: String, Decodable, Equatable {
 
     case ahoy = "ah"
     case aye = "ay"

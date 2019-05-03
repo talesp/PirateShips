@@ -12,7 +12,8 @@ class ShipListViewDataSource: NSObject, UICollectionViewDataSource {
 
     var shipList: [Ship] = [] {
         didSet {
-            DispatchQueue.main.async { [unowned self] in
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
                 self.collectionView?.reloadData()
             }
         }

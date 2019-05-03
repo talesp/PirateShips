@@ -32,7 +32,7 @@ class ShipListCell: UICollectionViewCell, Reusable, ViewConfiguration {
         shipHeaderView.priceLabel.text = "$ \(ship.price)"
         shipHeaderView.titleLabel.text = ship.title
         guard let url = URL(string: ship.image) else { return }
-        self.shipHeaderView.imageView.kf.setImage(with: url)
+        self.shipHeaderView.imageView.kf.setImage(with: url, options: [.transition(.fade(0.2))])
     }
 
     override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes)

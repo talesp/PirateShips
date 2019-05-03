@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ShipHeaderView: UIView {
 
@@ -52,9 +53,15 @@ class ShipHeaderView: UIView {
         view.setContentHuggingPriority(.defaultHigh, for: .vertical)
         view.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
         view.clipsToBounds = true
+        view.kf.indicatorType = .activity
         return view
     }()
 
+    init() {
+        super.init(frame: .zero)
+        setupViewConfiguration()
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: .zero)
         setupViewConfiguration()

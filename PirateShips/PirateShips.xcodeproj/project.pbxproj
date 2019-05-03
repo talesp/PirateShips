@@ -11,11 +11,14 @@
 		025C53E62274A7CC00BFD797 /* ShipHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025C53E52274A7CC00BFD797 /* ShipHeaderView.swift */; };
 		025C53E92279DFCA00BFD797 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 025C53E82279DFCA00BFD797 /* Kingfisher.framework */; };
 		025C53EE227A81F000BFD797 /* ShipDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025C53ED227A81F000BFD797 /* ShipDetailViewController.swift */; };
+		025C53F3227AA64A00BFD797 /* FBSnapshotTestCase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 025C53EF227AA64A00BFD797 /* FBSnapshotTestCase.framework */; };
+		025C53F4227AA64A00BFD797 /* Nimble_Snapshots.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 025C53F0227AA64A00BFD797 /* Nimble_Snapshots.framework */; };
+		025C53F5227AA64A00BFD797 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 025C53F1227AA64A00BFD797 /* Quick.framework */; };
+		025C53F6227AA64A00BFD797 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 025C53F2227AA64A00BFD797 /* Nimble.framework */; };
 		AA13A4D12272042300A01FA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA13A4D02272042300A01FA5 /* AppDelegate.swift */; };
 		AA13A4D32272042400A01FA5 /* ShipListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA13A4D22272042400A01FA5 /* ShipListViewController.swift */; };
 		AA13A4D82272042600A01FA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA13A4D72272042600A01FA5 /* Assets.xcassets */; };
 		AA13A4DB2272042600A01FA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA13A4D92272042600A01FA5 /* LaunchScreen.storyboard */; };
-		AA13A4E62272042700A01FA5 /* PirateShipsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA13A4E52272042700A01FA5 /* PirateShipsTests.swift */; };
 		AA2F01042272264E006B9717 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2F01032272264E006B9717 /* ViewState.swift */; };
 		AA2F010722722671006B9717 /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2F010622722671006B9717 /* UICollectionView.swift */; };
 		AA2F010922722693006B9717 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2F010822722693006B9717 /* Optional.swift */; };
@@ -29,6 +32,19 @@
 		AA2F011B2272319E006B9717 /* HTTPStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2F011A2272319E006B9717 /* HTTPStatusCode.swift */; };
 		AA2F011D22723309006B9717 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2F011C22723309006B9717 /* Result.swift */; };
 		AA2F011F22723B9D006B9717 /* PirateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2F011E22723B9D006B9717 /* PirateData.swift */; };
+		AA729681227CB253003A2689 /* FBSnapshotTestCase.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 025C53EF227AA64A00BFD797 /* FBSnapshotTestCase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AA729682227CB253003A2689 /* Nimble_Snapshots.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 025C53F0227AA64A00BFD797 /* Nimble_Snapshots.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AA729683227CB253003A2689 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 025C53F2227AA64A00BFD797 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AA729684227CB253003A2689 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 025C53F1227AA64A00BFD797 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AA729686227CB727003A2689 /* ReferenceImages in Resources */ = {isa = PBXBuildFile; fileRef = AA729685227CB726003A2689 /* ReferenceImages */; };
+		AA72968C227CE872003A2689 /* WebserviceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA72968B227CE872003A2689 /* WebserviceSpec.swift */; };
+		AA72968F227CE8A7003A2689 /* JSONHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA72968E227CE8A7003A2689 /* JSONHelper.swift */; };
+		AAE9B27B227CEBFB0042E523 /* HTTPURLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE9B27A227CEBFB0042E523 /* HTTPURLResponse.swift */; };
+		AAE9B27E227CEC050042E523 /* FakeURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE9B27D227CEC050042E523 /* FakeURLSession.swift */; };
+		AAE9B280227CEC7B0042E523 /* PirateShips.json in Resources */ = {isa = PBXBuildFile; fileRef = AAE9B27F227CEC7B0042E523 /* PirateShips.json */; };
+		AAE9B284227CEE200042E523 /* ShipDetailViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE9B281227CEE200042E523 /* ShipDetailViewControllerSpec.swift */; };
+		AAE9B285227CEE200042E523 /* ShipHeaderViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE9B282227CEE200042E523 /* ShipHeaderViewSpec.swift */; };
+		AAE9B286227CEE200042E523 /* ShipListViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE9B283227CEE200042E523 /* ShipListViewControllerSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,11 +57,31 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		AA729680227CB23E003A2689 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				AA729681227CB253003A2689 /* FBSnapshotTestCase.framework in CopyFiles */,
+				AA729682227CB253003A2689 /* Nimble_Snapshots.framework in CopyFiles */,
+				AA729683227CB253003A2689 /* Nimble.framework in CopyFiles */,
+				AA729684227CB253003A2689 /* Quick.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		025C53E32274A6AA00BFD797 /* ShipListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipListCell.swift; sourceTree = "<group>"; };
 		025C53E52274A7CC00BFD797 /* ShipHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipHeaderView.swift; sourceTree = "<group>"; };
 		025C53E82279DFCA00BFD797 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		025C53ED227A81F000BFD797 /* ShipDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipDetailViewController.swift; sourceTree = "<group>"; };
+		025C53EF227AA64A00BFD797 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSnapshotTestCase.framework; path = Carthage/Build/iOS/FBSnapshotTestCase.framework; sourceTree = "<group>"; };
+		025C53F0227AA64A00BFD797 /* Nimble_Snapshots.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble_Snapshots.framework; path = Carthage/Build/iOS/Nimble_Snapshots.framework; sourceTree = "<group>"; };
+		025C53F1227AA64A00BFD797 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		025C53F2227AA64A00BFD797 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		AA13A4CD2272042300A01FA5 /* PirateShips.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PirateShips.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA13A4D02272042300A01FA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA13A4D22272042400A01FA5 /* ShipListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipListViewController.swift; sourceTree = "<group>"; };
@@ -53,7 +89,6 @@
 		AA13A4DA2272042600A01FA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA13A4DC2272042600A01FA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA13A4E12272042700A01FA5 /* PirateShipsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PirateShipsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA13A4E52272042700A01FA5 /* PirateShipsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PirateShipsTests.swift; sourceTree = "<group>"; };
 		AA13A4E72272042700A01FA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA2F01032272264E006B9717 /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
 		AA2F010622722671006B9717 /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
@@ -68,6 +103,15 @@
 		AA2F011A2272319E006B9717 /* HTTPStatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPStatusCode.swift; sourceTree = "<group>"; };
 		AA2F011C22723309006B9717 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		AA2F011E22723B9D006B9717 /* PirateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PirateData.swift; sourceTree = "<group>"; };
+		AA729685227CB726003A2689 /* ReferenceImages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ReferenceImages; sourceTree = "<group>"; };
+		AA72968B227CE872003A2689 /* WebserviceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebserviceSpec.swift; sourceTree = "<group>"; };
+		AA72968E227CE8A7003A2689 /* JSONHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONHelper.swift; sourceTree = "<group>"; };
+		AAE9B27A227CEBFB0042E523 /* HTTPURLResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPURLResponse.swift; sourceTree = "<group>"; };
+		AAE9B27D227CEC050042E523 /* FakeURLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeURLSession.swift; sourceTree = "<group>"; };
+		AAE9B27F227CEC7B0042E523 /* PirateShips.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PirateShips.json; sourceTree = "<group>"; };
+		AAE9B281227CEE200042E523 /* ShipDetailViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShipDetailViewControllerSpec.swift; sourceTree = "<group>"; };
+		AAE9B282227CEE200042E523 /* ShipHeaderViewSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShipHeaderViewSpec.swift; sourceTree = "<group>"; };
+		AAE9B283227CEE200042E523 /* ShipListViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShipListViewControllerSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +127,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				025C53F3227AA64A00BFD797 /* FBSnapshotTestCase.framework in Frameworks */,
+				025C53F4227AA64A00BFD797 /* Nimble_Snapshots.framework in Frameworks */,
+				025C53F5227AA64A00BFD797 /* Quick.framework in Frameworks */,
+				025C53F6227AA64A00BFD797 /* Nimble.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +140,10 @@
 		025C53E72279DFCA00BFD797 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				025C53EF227AA64A00BFD797 /* FBSnapshotTestCase.framework */,
+				025C53F0227AA64A00BFD797 /* Nimble_Snapshots.framework */,
+				025C53F2227AA64A00BFD797 /* Nimble.framework */,
+				025C53F1227AA64A00BFD797 /* Quick.framework */,
 				025C53E82279DFCA00BFD797 /* Kingfisher.framework */,
 			);
 			name = Frameworks;
@@ -155,7 +207,12 @@
 		AA13A4E42272042700A01FA5 /* PirateShipsTests */ = {
 			isa = PBXGroup;
 			children = (
-				AA13A4E52272042700A01FA5 /* PirateShipsTests.swift */,
+				AAE9B287227CEE2A0042E523 /* Tests */,
+				AAE9B27C227CEC050042E523 /* FakeObjects */,
+				AAE9B279227CEBFB0042E523 /* Extensions */,
+				AA729690227CE8BB003A2689 /* Fixtures */,
+				AA72968D227CE898003A2689 /* Helpers */,
+				AA729685227CB726003A2689 /* ReferenceImages */,
 				AA13A4E72272042700A01FA5 /* Info.plist */,
 			);
 			path = PirateShipsTests;
@@ -201,6 +258,49 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		AA72968D227CE898003A2689 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				AA72968E227CE8A7003A2689 /* JSONHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		AA729690227CE8BB003A2689 /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				AAE9B27F227CEC7B0042E523 /* PirateShips.json */,
+			);
+			path = Fixtures;
+			sourceTree = "<group>";
+		};
+		AAE9B279227CEBFB0042E523 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AAE9B27A227CEBFB0042E523 /* HTTPURLResponse.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AAE9B27C227CEC050042E523 /* FakeObjects */ = {
+			isa = PBXGroup;
+			children = (
+				AAE9B27D227CEC050042E523 /* FakeURLSession.swift */,
+			);
+			path = FakeObjects;
+			sourceTree = "<group>";
+		};
+		AAE9B287227CEE2A0042E523 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				AAE9B281227CEE200042E523 /* ShipDetailViewControllerSpec.swift */,
+				AAE9B282227CEE200042E523 /* ShipHeaderViewSpec.swift */,
+				AAE9B283227CEE200042E523 /* ShipListViewControllerSpec.swift */,
+				AA72968B227CE872003A2689 /* WebserviceSpec.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -229,6 +329,7 @@
 				AA13A4DD2272042700A01FA5 /* Sources */,
 				AA13A4DE2272042700A01FA5 /* Frameworks */,
 				AA13A4DF2272042700A01FA5 /* Resources */,
+				AA729680227CB23E003A2689 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -292,6 +393,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAE9B280227CEC7B0042E523 /* PirateShips.json in Resources */,
+				AA729686227CB727003A2689 /* ReferenceImages in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,7 +453,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA13A4E62272042700A01FA5 /* PirateShipsTests.swift in Sources */,
+				AAE9B284227CEE200042E523 /* ShipDetailViewControllerSpec.swift in Sources */,
+				AA72968C227CE872003A2689 /* WebserviceSpec.swift in Sources */,
+				AAE9B27E227CEC050042E523 /* FakeURLSession.swift in Sources */,
+				AA72968F227CE8A7003A2689 /* JSONHelper.swift in Sources */,
+				AAE9B285227CEE200042E523 /* ShipHeaderViewSpec.swift in Sources */,
+				AAE9B27B227CEBFB0042E523 /* HTTPURLResponse.swift in Sources */,
+				AAE9B286227CEE200042E523 /* ShipListViewControllerSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,11 +649,16 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = PirateShipsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
+					"$(SRCROOT)/../../Carthage/Build/iOS",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.talesp.PirateShipsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -560,11 +674,16 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = PirateShipsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
+					"$(SRCROOT)/../../Carthage/Build/iOS",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.talesp.PirateShipsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
