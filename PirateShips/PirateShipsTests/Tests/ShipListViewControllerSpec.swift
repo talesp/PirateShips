@@ -16,18 +16,16 @@ import Quick
 class ShipListViewControllerSpec: QuickSpec {
     override func spec() {
         describe("ShipListViewController") {
-            it("should...") {
+            it("should have a valid datasource") {
                 let sut = ShipListViewController(nibName: nil, bundle: nil)
-                sut.datasource.shipList = [
+                let viewModel = ShipListViewModel(collectionView: sut.collectionView)
+                viewModel.viewState = .content([
                     Ship(title: "Title 1", description: "Description 1", price: 42, image: "", greeting: .ahoy),
                     Ship(title: "Title 2", description: "Description 2", price: 42, image: "", greeting: .arr),
                     Ship(title: "Title 3", description: "Description 3", price: 42, image: "", greeting: .aye)
-                ]
+                ])
 
-                let window = UIWindow(frame: UIScreen.main.bounds)
-                window.rootViewController = UINavigationController(rootViewController: sut)
-                window.becomeKey()
-                expect(window) == snapshot()
+                expect(sut.collectionView.numberOfItems(inSection: 0)) == 3
             }
         }
     }
